@@ -1,0 +1,22 @@
+/* bugSolution.css */
+.element::before {
+  content: "This text renders correctly."; /* Correct usage */
+}
+
+.element::after {
+  content: attr(data-custom-text); /* Using attr() for dynamic content */
+}
+
+.special::before {
+  content: "This is a \"quoted\" string."; /* Correct escaping */
+}
+
+/*Example of a corrected dynamic content usage*/
+.anotherElement::after {
+  content: "The value is: " attr(data-value) "!";
+}
+
+/*Example of a complex selector*/
+.container > p:nth-child(2)::before{
+  content: "This is the second paragraph";
+}
